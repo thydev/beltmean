@@ -1,6 +1,8 @@
-<a [routerLink]="['/']">Home</a>  
 
 <div class="container">
+    <a [routerLink]="['/']">Home</a>  
+    <h1>Pet Shelter</h1>
+    <h4>Know of a pet needing a home?</h4>
     <form class="form-horizontal" (submit)="onSubmit()" >
       <div class="form-group">
         <label class="control-label col-sm-3" for="email">Pet name:</label>
@@ -45,7 +47,7 @@
           </div>
       </div>
       <div class="skills">
-          <h2>Skills:</h2>
+          <h2>Skills: (Optional):</h2>
             <div class="form-group">
               <label class="control-label col-sm-3">Skill 1</label>
               <div class="col-sm-9"> 

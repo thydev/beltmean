@@ -1,6 +1,7 @@
-<a [routerLink]="['/']">Home</a>  
+
 
 <div class="container" *ngIf="pet">
+  <a [routerLink]="['/']">Home</a>  
   <h1>Pet Shelter</h1>
   <h3>Detail About {{pet.name}}</h3>
   <h5>Pet type: {{pet.pettype}}</h5>
