@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Pet Shelter</h1>
+      <h4>These pets are looking for a home</h4>
+      <button [routerLink]="['/new']" class="btn btn-link">Add a pet to the shelter</button> 
+    </div>
+  </div>
+  <table class="table table-hover border">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th colspan="2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of pets">
+        <ng-template #tipContent> 
+          <p class="text-left">
+            Skills: {{t.skill1}} {{t.skill2}} {{t.skill3}} </p>
+        </ng-template>
+        <td><span
+          placement="right" [ngbTooltip]="tipContent">{{t.name}}</span></td>
+          <!-- <td>{{t.name}}</td> -->
+        <td>{{t.pettype}}</td>
+        <td>
+            <button class="btn btn-secondary"
+            routerLink = "/detail/{{t._id}}"
+            >Details</button> 
+        </td>
+        <td>
+            <button class="btn btn-primary"
+            routerLink = "/edit/{{t._id}}"
+              >Edit</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

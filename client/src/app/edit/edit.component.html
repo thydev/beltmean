@@ -1,0 +1,89 @@
+<a [routerLink]="['/']">Home</a>  
+
+<div class="container">
+    <form class="form-horizontal" (submit)="onSubmit()" >
+      <div class="form-group">
+        <label class="control-label col-sm-3" for="email">Pet name:</label>
+        <div class="col-sm-9">
+  
+          <!-- <span [hidden]="name.valid" class="text-danger">*Name must be at least 3 characters in length.</span> -->
+  
+          <span [hidden]="!errors.name"  class="text-danger">*{{errors.name.message}}</span>
+          <input type="text" class="form-control" id="name" placeholder="Enter name"
+            required
+            minlength="3"
+            name="name"
+            [(ngModel)]="pet.name"
+            #name="ngModel"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-3">Pet Type:</label>
+        <div class="col-sm-9"> 
+            <span [hidden]="!errors.pettype || pettype.valid"  class="text-danger">*{{errors.pettype.message}}</span>
+          <input type="text" class="form-control" placeholder="Enter pet type"
+            required
+            minlength="3"
+            name="pettype"
+            [(ngModel)]="pet.pettype"
+            #pettype="ngModel"
+          >
+        </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-sm-3">Description:</label>
+          <div class="col-sm-9"> 
+            <span [hidden]="!errors.description || description.valid"  class="text-danger">*{{errors.description.message}}</span>
+            <input type="text" class="form-control" placeholder="Enter description"
+              required
+              minlength="3"
+              name="description"
+              [(ngModel)]="pet.description"
+              #description="ngModel"
+            >
+          </div>
+      </div>
+      <div class="skills">
+          <h2>Skills:</h2>
+            <div class="form-group">
+              <label class="control-label col-sm-3">Skill 1</label>
+              <div class="col-sm-9"> 
+                <input type="text" class="form-control" placeholder="Enter a skill"
+                  name="skill1"
+                  [(ngModel)]="pet.skill1"
+
+                >
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-3">Skill 2</label>
+              <div class="col-sm-9"> 
+                <input type="text" class="form-control" placeholder="Enter a skill"
+                  name="skill2"
+                  [(ngModel)]="pet.skill2"
+
+                >
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-3">Skill 3</label>
+              <div class="col-sm-9"> 
+                <input type="text" class="form-control" placeholder="Enter a skill"
+                  name="skill3"
+                  [(ngModel)]="pet.skill3"
+
+                >
+              </div>
+            </div>
+      </div>
+      
+      <div class="form-group"> 
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary" 
+          > Update </button>
+          <button [routerLink]="['/detail/', pet._id]" class="btn btn-primary"> Cancel </button>
+        </div>
+      </div>
+    </form>
+  </div>

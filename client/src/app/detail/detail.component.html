@@ -1,0 +1,15 @@
+<a [routerLink]="['/']">Home</a>  
+
+<div class="container" *ngIf="pet">
+  <h1>Pet Shelter</h1>
+  <h3>Detail About {{pet.name}}</h3>
+  <h5>Pet type: {{pet.pettype}}</h5>
+  <h5>Description: {{pet.description}}</h5>
+  <h5>Skills: {{pet.skill1}} {{pet.skill2}} {{pet.skill3}} </h5>
+  <h5>Likes: {{pet.likes}}</h5>
+
+  <button (click)="onLikes()" [disabled]="isLike" class="btn btn-primary"> Like this pet </button>
+  <span>&nbsp;</span>
+  <button (click)="onAdopt()" class="btn btn-primary"> Adopt this pet </button>
+
+</div>
