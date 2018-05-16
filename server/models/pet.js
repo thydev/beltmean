@@ -10,7 +10,6 @@ module.exports = (() => {
             required: [true, 'name is required'], 
             minlength: [3, 'name must be greater than 3 characters'],
             unique: [true, 'This name already exists'], // Use 'mongoose-unique-validator'
-            // unique: true, 
             dropDups: true
         },
         pettype: {
@@ -46,7 +45,6 @@ module.exports = (() => {
     mongoose.model('Pet', PetSchema);
     // Apply the uniqueValidator plugin to UserSchema.
     // UserSchema.plugin(uniqueValidator);
-    
     // You have access to all of the standard Mongoose error message templating:
     // {PATH}
     // {VALUE}

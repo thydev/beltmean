@@ -15,8 +15,6 @@ import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { DetailComponent } from './detail/detail.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
